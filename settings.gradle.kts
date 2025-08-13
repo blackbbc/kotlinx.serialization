@@ -30,6 +30,9 @@ pluginManagement {
         maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
         // For Dokka that depends on kotlinx-html
         maven("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven")
+        // For KBA
+        maven("https://mirrors.tencent.com/nexus/repository/maven-tencent")
+        maven("https://mirrors.tencent.com/nexus/repository/maven-public")
 
         gradlePluginPortal()
         mavenCentral()
@@ -52,8 +55,8 @@ project(":kotlinx-serialization-bom").projectDir = file("./bom")
 include(":kotlinx-serialization-json")
 project(":kotlinx-serialization-json").projectDir = file("./formats/json")
 
-include(":kotlinx-serialization-json-okio")
-project(":kotlinx-serialization-json-okio").projectDir = file("./formats/json-okio")
+//include(":kotlinx-serialization-json-okio")
+//project(":kotlinx-serialization-json-okio").projectDir = file("./formats/json-okio")
 
 include(":kotlinx-serialization-json-io")
 project(":kotlinx-serialization-json-io").projectDir = file("./formats/json-io")

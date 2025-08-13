@@ -34,6 +34,8 @@ kotlin {
     tvosArm64()
     iosArm64()
 
+    ohosArm64()
+
     // Tier 3
     mingwX64()
     // https://github.com/square/okio/issues/1242#issuecomment-1759357336

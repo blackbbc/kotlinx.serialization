@@ -26,7 +26,7 @@ kotlin {
             dependencies {
                 api(project(":kotlinx-serialization-core"))
                 api(project(":kotlinx-serialization-json"))
-                implementation(libs.okio)
+//                implementation(libs.okio)
             }
         }
     }

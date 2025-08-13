@@ -32,6 +32,9 @@ repositories {
     maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
     // For Dokka that depends on kotlinx-html
     maven("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven")
+    // For KBA
+    maven("https://mirrors.tencent.com/nexus/repository/maven-tencent")
+    maven("https://mirrors.tencent.com/nexus/repository/maven-public")
 
     mavenCentral()
     mavenLocal()

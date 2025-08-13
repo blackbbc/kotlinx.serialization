@@ -8,7 +8,7 @@ import org.jetbrains.dokka.gradle.*
 plugins {
     base
     alias(libs.plugins.knit)
-    id("org.jetbrains.kotlinx.binary-compatibility-validator")
+//    id("org.jetbrains.kotlinx.binary-compatibility-validator")
     id("org.jetbrains.dokka")
     id("benchmark-conventions")
     id("publishing-check-conventions")
@@ -24,6 +24,9 @@ repositories {
     maven("https://cache-redirector.jetbrains.com/maven.pkg.jetbrains.space/kotlin/p/kotlin/dev")
     // For Dokka that depends on kotlinx-html
     maven("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven")
+    // For KBA
+    maven("https://mirrors.tencent.com/nexus/repository/maven-tencent")
+    maven("https://mirrors.tencent.com/nexus/repository/maven-public")
     // For local development
     mavenLocal()
 }
@@ -58,17 +61,21 @@ allprojects {
     repositories {
         mavenCentral()
         maven("https://cache-redirector.jetbrains.com/maven.pkg.jetbrains.space/kotlin/p/kotlin/dev")
+        // For KBA
+        maven("https://mirrors.tencent.com/nexus/repository/maven-tencent")
+        maven("https://mirrors.tencent.com/nexus/repository/maven-public")
+        mavenLocal()
     }
 }
 
 // == BCV setup ==
-apiValidation {
-    ignoredProjects.addAll(listOf("benchmark", "guide", "kotlinx-serialization", "kotlinx-serialization-json-tests"))
-    @OptIn(ExperimentalBCVApi::class)
-    klib {
-        enabled = true
-    }
-}
+//apiValidation {
+//    ignoredProjects.addAll(listOf("benchmark", "guide", "kotlinx-serialization", "kotlinx-serialization-json-tests"))
+//    @OptIn(ExperimentalBCVApi::class)
+//    klib {
+//        enabled = true
+//    }
+//}
 
 // == Knit setup ==
 
@@ -175,7 +182,7 @@ val globalCompilerArgs
 
 val documentedSubprojects get() = setOf("kotlinx-serialization-core",
     "kotlinx-serialization-json",
-    "kotlinx-serialization-json-okio",
+//    "kotlinx-serialization-json-okio",
     "kotlinx-serialization-json-io",
     "kotlinx-serialization-cbor",
     "kotlinx-serialization-properties",
